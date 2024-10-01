@@ -1,19 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Tracklist from './Tracklist';
+import styles from "./CSS/Playlist.module.css";
 
-function Playlist() {
-  const playlistTracks = [
-    { id: 1, name: 'Playlist Song A', artist: 'Artist A' },
-    { id: 2, name: 'Playlist Song B', artist: 'Artist B' }
-  ];
+function Playlist({style, playlist}) {
+
+  const [playlistName, setPlaylistName] = useState('');
+  
+  
+  function handleUserInput(e) {
+    setPlaylistName(e.target.value);
+  }
 
   return (
 
-    <div>
+    <div className={style}>
 
-        <form>
-          <input placeholder="name your playlist..." type="text" />
-          <Tracklist tracks={playlistTracks} />
+        <form className={styles.playlist}>
+          <input placeholder="name your playlist name..." type="text" onChange={handleUserInput} value={playlistName} />
+          <h3>{playlistName}</h3>
+          <Tracklist tracks={playlist} />
           <button type="submit">Save to Apple Music</button>
         </form>
 

@@ -1,0 +1,34 @@
+.mainBody {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 'searchResult playlist';
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.searchResult {
+    grid-area: searchResult;
+}
+
+.playlist {
+    grid-area: playlist;
+}
+
+span {
+    color: rgb(255, 115, 0);
+}
+
+
+.nameContainer {
+    /*background-color: rgb(163, 140, 105);*/
+}
+
+.nameContainer h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 0;
+}
+
+h2 {
+    margin-top: 0;
+}
