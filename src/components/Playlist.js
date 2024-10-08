@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Tracklist from './Tracklist';
 import styles from "./CSS/Playlist.module.css";
 
-function Playlist({style, playlist}) {
+function Playlist({style, playlist, onRemove}) {
 
   const [playlistName, setPlaylistName] = useState('');
   
@@ -18,7 +18,7 @@ function Playlist({style, playlist}) {
         <form className={styles.playlist}>
           <input placeholder="name your playlist name..." type="text" onChange={handleUserInput} value={playlistName} />
           <h3>{playlistName}</h3>
-          <Tracklist tracks={playlist} />
+          <Tracklist tracks={playlist} onRemove={onRemove} />
           <button type="submit">Save to Apple Music</button>
         </form>
 

@@ -10,8 +10,8 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
 
 
-// results from the API
-useEffect(() => {
+  // Simulate API results
+  useEffect(() => {
     const searchResultsFromApi = [
         { id: 1, name: 'No Lele', artist: 'Wizkid', album: 'Super-Star' },
         { id: 2, name: 'Mentally', artist: 'Asake', album: 'Lungu Boy' }
@@ -20,7 +20,7 @@ useEffect(() => {
     setSearchResults(searchResultsFromApi);
   }, []);
 
-// Function to handle adding a track to the playlist
+  // Add a track to the playlist
   const addTrackToPlaylist = (track) => {
     setPlaylist((prevTracks) => {
         
@@ -30,6 +30,11 @@ useEffect(() => {
       }
       return [...prevTracks, track];
     });
+  };
+
+  // Remove a track from the playlist
+  const removeTrackFromPlaylist = (track) => {
+    setPlaylist((prevTracks) => prevTracks.filter((t) => t.id !== track.id));
   };
 
   return (
@@ -45,14 +50,18 @@ useEffect(() => {
         <SearchResults 
           style={styles.searchResults} 
           searchResults={searchResults}
-          onAdd={addTrackToPlaylist}
+          onAdd={addTrackToPlaylist} // Pass addTrackToPlaylist function
           />
 
-        <Playlist style={styles.playlist} playlist={playlist}/>
+        <Playlist 
+        style={styles.playlist} 
+        playlist={playlist}
+        onRemove={removeTrackFromPlaylist} // Pass removeTrackFromPlaylist function
+        />
       </div>
 
     </div>
   );
 }
 
-export default App;
+export default App; 

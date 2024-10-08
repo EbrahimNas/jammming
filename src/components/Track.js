@@ -1,13 +1,21 @@
 import React from 'react';
 import styles from "./CSS/Track.module.css";
 
-function Track({ track, onAdd }) {
+function Track({ track, onAdd, onRemove }) {
+    
   return (
     <div className={styles.track}>
-      <h3>{track.name}</h3>
-      <p className={styles.artist}>{track.artist}</p>
-      <p className={styles.album}><em>- {track.album}</em></p>
-      <button onClick={() => onAdd(track)}>+</button>
+
+      <div className={styles.trackInfo}>
+        <h3>{track.name}</h3>
+        <p className={styles.artist}>{track.artist}</p>
+        <p className={styles.album}><em>- {track.album}</em></p>
+      </div>
+      
+      <div className={styles.buttonContainer}>
+        {onAdd && <button onClick={() => onAdd(track)}>+</button>} {/* Render "+" if onAdd exists */}
+        {onRemove && <button onClick={() => onRemove(track)}>-</button>} {/* Render "-" if onRemove exists */}
+      </div>
     </div>
   );
 }

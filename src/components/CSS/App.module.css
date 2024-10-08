@@ -1,17 +1,23 @@
 .mainBody {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-areas: 'searchResult playlist';
+    grid-template-areas: 'searchResults playlist';
     gap: 50px;
     margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
-.searchResult {
-    grid-area: searchResult;
+.searchResults {
+    grid-area: searchResults;
+    max-width: 500px;
+    
 }
 
 .playlist {
     grid-area: playlist;
+    max-width: 500px;
+    
 }
 
 span {
