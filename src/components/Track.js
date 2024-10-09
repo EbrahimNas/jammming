@@ -8,8 +8,8 @@ function Track({ track, onAdd, onRemove }) {
 
       <div className={styles.trackInfo}>
         <h3>{track.name}</h3>
-        <p className={styles.artist}>{track.artist}</p>
-        <p className={styles.album}><em>- {track.album}</em></p>
+        <p className={styles.artist}>{track.artists[0].name}</p>
+        <p className={styles.album}><em>- {track.album.name}</em></p>
       </div>
       
       <div className={styles.buttonContainer}>

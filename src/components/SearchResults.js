@@ -1,7 +1,7 @@
 import React from 'react';
-import Tracklist from './Tracklist';
+import Tracklist from './Tracklist.js';
 
-function SearchResults({style, searchResults = [], onAdd}) {
+function SearchResults({style, searchResults, onAdd}) {
 
 
   return (

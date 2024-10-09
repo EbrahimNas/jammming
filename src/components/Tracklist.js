@@ -1,7 +1,10 @@
 import React from 'react';
-import Track from './Track';
+import Track from './Track.js';
 
-function Tracklist({ tracks = [], onAdd, onRemove }) {
+function Tracklist({ tracks, onAdd, onRemove }) {
+
+  console.log("Tracks prop received in Tracklist:", tracks);
+
   return (
     <div>
       {tracks.map(track => (

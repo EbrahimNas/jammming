@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Tracklist from './Tracklist';
+import Tracklist from './Tracklist.js';
 import styles from "./CSS/Playlist.module.css";
 
 function Playlist({style, playlist, onRemove}) {
