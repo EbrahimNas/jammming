@@ -19,7 +19,7 @@ function Playlist({style, playlist, onRemove}) {
           <input placeholder="name your playlist name..." type="text" onChange={handleUserInput} value={playlistName} />
           <h3>{playlistName}</h3>
           <Tracklist tracks={playlist} onRemove={onRemove} />
-          <button type="submit">Save to Apple Music</button>
+          <button type="submit">Save to Spotify</button>
         </form>
 
     </div>
