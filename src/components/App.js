@@ -11,6 +11,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlist, setPlaylist] = useState([]); 
   const [accessToken, setAccessToken] = useState('');
+  const [username, setUsername] = useState('');
 
   // Function to handle search input change
   function handleSearchInputChange(e) {
@@ -49,6 +50,24 @@ function App() {
     }
   };
 
+  // Fetch user profile information
+  const fetchUserProfile = async () => {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      });
+      const data = await response.json();
+      setUsername(data.display_name); // Set the username
+    } catch (error) {
+      console.error('Error fetching user profile:', error);
+    }
+  };
+  
+  fetchUserProfile()
+
   // Check for authorization code when the component mounts
   useEffect(() => {
     const authCode = getAuthCode(); // Get the authorization code from the URL
@@ -59,15 +78,15 @@ function App() {
         .then((data) => {
           if (data && data.access_token) {
             setAccessToken(data.access_token); // Save the access token in state
-            alert(`Access Token: ${data.access_token}`); // Alert the access token
+            /*alert(`Access Token: ${data.access_token}`); // Alert the access token*/
           }
         })
         .catch((error) => {
           console.error('Error exchanging code for token:', error);
         });
-    }
+    } 
   }, []); // Runs only once on mount
-  
+
 
   // Add a track to the playlist
   const addTrackToPlaylist = (track) => {
@@ -84,15 +103,20 @@ function App() {
   const removeTrackFromPlaylist = (track) => {
     setPlaylist((prevTracks) => prevTracks.filter((t) => t.id !== track.id));
   };
+  
 
   return (
     <div className={styles.app}>
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <h1>Ja<span>mmm</span>ing 🎧</h1>
-          <button type="submit" onClick={redirectToSpotifyAuthorize}>
-            Login with Spotify
-          </button>
+          {username ? (
+            <button>Hello, {username}</button> // Show username if logged in
+          ) : (
+            <button type="submit" onClick={redirectToSpotifyAuthorize}>
+              Login with Spotify
+            </button> // Show login button if not logged in
+          )}
         </div>
       </div>
       
@@ -108,7 +132,8 @@ function App() {
         <Playlist 
           style={styles.playlist} 
           playlist={playlist}
-          onRemove={removeTrackFromPlaylist} // Pass removeTrackFromPlaylist function
+          onRemove={removeTrackFromPlaylist}
+          accessToken={accessToken} // Pass removeTrackFromPlaylist function
         />
       </div>
     </div>
