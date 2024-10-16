@@ -2,9 +2,17 @@ import React from 'react';
 import styles from "./CSS/Track.module.css";
 
 function Track({ track, onAdd, onRemove }) {
+
+  // Fetch the album image, default to a placeholder if not available
+  const albumImage = track.album.images.length > 0 ? track.album.images[0].url : 'default-placeholder-image-url';
+
     
   return (
     <div className={styles.track}>
+
+      <div className={styles.trackImage}>
+        <img src={albumImage} alt={`${track.name} album art`} />
+      </div>
 
       <div className={styles.trackInfo}>
         <h3>{track.name}</h3>

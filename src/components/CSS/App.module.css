@@ -1,20 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px;
-    width: 100%;
 }
 
 .headerContent {
     display: flex;
+    width: 100%;
     width: 1200px;
     margin: 0 auto;
 }
 
 .headerContent h1 {
     flex-grow: 1;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin-bottom: 0;
     margin-top: 0;
 }
@@ -22,14 +30,12 @@
 .headerContent button {
     background-color: #e9944e;
     border: none;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
     padding: 10px 20px;
     margin-left: auto;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    top: 0;
-    right: 0;
     transition: .9s ease;
 }
 
@@ -40,25 +46,30 @@
 }
 
 .mainBody {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: 'searchResults playlist';
-    gap: 50px;
-    margin-top: 50px;
-    margin-left: 60px;
-    margin-right: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
 }
 
 .searchResults {
-    grid-area: searchResults;
-    max-width: 500px;
-    
+    width: 475px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.searchResults h2 {
+    color: white;
 }
 
 .playlist {
-    grid-area: playlist;
-    max-width: 500px;
-    
+    width: 475px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 25px;
 }
 
 span {
