@@ -20,16 +20,12 @@
 
 ### landing page
 ![Desktop landing page](./assets/screenshot1.png)
-![Mobile landing page](./assets/screenshot2.jpeg)
 
 ### OAuth via Spotify
 ![Desktop OAuth page](./assets/screenshot3.png)
-![Mobile OAuth page](./assets/screenshot4.jpeg)
 
 ### Functioning Jammming App
 ![Desktop Screenshot of Jamming App](./assets/screenshot5.png)
-![Mobile Screenshot of Jamming App](./assets/screenshot6.jpg)
-
 
 
 ## Technologies Used
