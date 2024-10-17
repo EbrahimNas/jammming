@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Jammming Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Jammming** is a web application that integrates with the Spotify API, allowing users to search for their favorite tracks, create custom playlists, and save them directly to their Spotify account. The app uses OAuth to securely authenticate users with Spotify and provides an intuitive interface for interacting with their music.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Search for Songs:**  
+  Users can search for songs by name, artist, or album using Spotify’s vast music library.
+  
+- **Create Custom Playlists:**  
+  Users can build playlists by adding tracks from the search results.
 
-### `npm start`
+- **Save Playlists to Spotify:**  
+  Once a playlist is created, users can save it directly to their Spotify account.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **OAuth Authentication:**  
+  Secure user login via Spotify’s OAuth, ensuring user privacy and secure access to Spotify data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+### landing page
+![Desktop landing page](./assets/screenshot1.png)
+![Mobile landing page](./assets/screenshot2.jpeg)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### OAuth via Spotify
+![Desktop OAuth page](./assets/screenshot3.png)
+![Mobile OAuth page](./assets/screenshot4.jpeg)
 
-### `npm run build`
+### Functioning Jammming App
+![Desktop Screenshot of Jamming App](./assets/screenshot5.png)
+![Mobile Screenshot of Jamming App](./assets/screenshot6.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- **Frontend:**
+  - JavaScript (React)
+  - HTML, CSS
+  - Spotify Web API
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Backend:**
+  - No backend required, interacts directly with the Spotify API
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Authentication:**
+  - OAuth 2.0 via Spotify
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+- You will need a [Spotify Developer account](https://developer.spotify.com/) to use the Spotify API.
+- Create a Spotify app and obtain your **Client ID** and **Client Secret**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/EbrahimNDev/jammming-web-app.git
+   cd jammming-web-app
 
-### Code Splitting
+2. Install dependencies:
+   ```bash
+   npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Set up environment variables:
+   - Create a .env file in the root directory and add your Spotify credentials:
+     ```bash
+     REACT_APP_SPOTIFY_CLIENT_ID=your_spotify_client_id
+     REACT_APP_SPOTIFY_REDIRECT_URI=your_redirect_uri
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Start the development server:
+   ```bash
+   npm start
