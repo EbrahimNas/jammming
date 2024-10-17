@@ -81,3 +81,39 @@ span {
 h2 {
     margin-top: 0;
 }
+
+@media screen and (max-width: 430px) {
+
+    .app {
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    .mainBody {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        max-width: 420px;
+        margin: 0 auto;
+        align-items: start;
+    }
+    
+    .searchResults {
+        width: 47%;
+        background-color: #1f1f1f;
+        padding: 5px;
+        border-radius: 25px;
+    }
+    
+    .searchResults h2 {
+        color: white;
+        font-size: smaller;
+    }
+    
+    .playlist {
+        width: 47%;
+        background-color: #1f1f1f;
+        padding: 5px;
+        border-radius: 25px;
+    }
+}
