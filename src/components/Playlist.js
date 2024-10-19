@@ -51,7 +51,7 @@ function Playlist({ style, playlist, onRemove, accessToken }) {
         },
         body: JSON.stringify({
           name: playlistName,
-          description: 'New playlist created via the app',
+          description: 'New playlist created via Jammming',
           public: false, // You can make it public if you want
         }),
       });
