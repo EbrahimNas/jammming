@@ -21,6 +21,11 @@ function Track({ track, onAdd, onRemove }) {
       </div>
       
       <div className={styles.buttonContainer}>
+        <a href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+           <g>
+              <img src="./spotifyLogoG.png" alt="Spotify Logo" className="spotify-logo"/>
+           </g>
+        </a>
         {onAdd && <button onClick={() => onAdd(track)}>+</button>} {/* Render "+" if onAdd exists */}
         {onRemove && <button onClick={() => onRemove(track)}>-</button>} {/* Render "-" if onRemove exists */}
       </div>

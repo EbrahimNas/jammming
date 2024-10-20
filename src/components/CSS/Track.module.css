@@ -29,9 +29,21 @@ p {
 }
 
 .buttonContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    display: grid;
+}
+
+.buttonContainer img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-top: 50px;
+    transition: .9s ease;
+    filter: grayscale(100%)
+}
+
+.buttonContainer img:hover {
+    transform: scale(1.2);
+    filter: none;
 }
 
 .track button {
@@ -45,6 +57,8 @@ p {
     border-radius: 50%;
     cursor: pointer;
     transition: .9s ease;
+    justify-self: flex-end;
+    align-self: self-end;
 }
 
 .track button:hover {
@@ -77,9 +91,12 @@ p {
         font-size: smaller;
     }
 
-    .track button {
-        height: 20px;
+    .buttonContainer img {
         width: 20px;
+        height: 20px;
+    }
+
+    .track button {
         margin-left: 0;
         background-color: #e9944e;
         border: none;

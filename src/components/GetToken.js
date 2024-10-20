@@ -20,7 +20,7 @@ async function generateCodeChallenge(code_verifier) {
 
 // Redirect User to Spotify Authorization URL
 const clientId = 'b56ee1c9bda344348948a3a45e1b5d3c';
-const redirectUri = 'http://localhost:3000'; // Update with your redirect URI
+const redirectUri = 'https://jammmingforspotify.netlify.app'; // Update with your redirect URI
 const scope = 'user-read-private user-read-email playlist-modify-public playlist-modify-private';
 
 export async function redirectToSpotifyAuthorize() {
