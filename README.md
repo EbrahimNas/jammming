@@ -68,3 +68,6 @@
 4. Start the development server:
    ```bash
    npm start
+
+## Contributing
+Feel free to fork this repository and submit pull requests with new features or improvements.
