@@ -21,11 +21,13 @@ function Playlist({ style, playlist, onRemove, accessToken }) {
     }
 
     if (!playlistName) {
+      alert('Please name your playlist to save to spotify.');
       console.error('Playlist name cannot be empty.');
       return;
     }
 
     if (playlist.length === 0) {
+      alert('Playlist must contain at least one track.');
       console.error('Playlist must contain at least one track.');
       return;
     }
