@@ -83,6 +83,7 @@ function App() {
         }
       }
     } else {
+      alert('Please log in with Spotify to search for music.');
       console.error('Access token is not available.');
     }
   };

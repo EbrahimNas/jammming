@@ -15,6 +15,7 @@ function Playlist({ style, playlist, onRemove, accessToken }) {
     event.preventDefault();
 
     if (!accessToken) {
+      alert('Please log in with Spotify to save playlist to Spotify.');
       console.error('Access token is not available.');
       return;
     }
@@ -30,7 +31,7 @@ function Playlist({ style, playlist, onRemove, accessToken }) {
     }
 
     try {
-      // Step 1: Get the current user's Spotify ID
+      // Get the current user's Spotify ID
       const userResponse = await fetch('https://api.spotify.com/v1/me', {
         method: 'GET',
         headers: {
@@ -42,7 +43,7 @@ function Playlist({ style, playlist, onRemove, accessToken }) {
       const userData = await userResponse.json();
       const userId = userData.id;
 
-      // Step 2: Create a new playlist with the provided name
+      // Create a new playlist with the provided name
       const createPlaylistResponse = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
         method: 'POST',
         headers: {
@@ -52,7 +53,7 @@ function Playlist({ style, playlist, onRemove, accessToken }) {
         body: JSON.stringify({
           name: playlistName,
           description: 'New playlist created via Jammming',
-          public: false, // You can make it public if you want
+          public: false,
         }),
       });
 
@@ -61,8 +62,8 @@ function Playlist({ style, playlist, onRemove, accessToken }) {
       const playlistData = await createPlaylistResponse.json();
       const newPlaylistId = playlistData.id;
 
-      // Step 3: Add tracks to the newly created playlist
-      const trackUris = playlist.map((track) => track.uri); // Assuming each track has a 'uri' field
+      // Add tracks to the newly created playlist
+      const trackUris = playlist.map((track) => track.uri);
 
       await fetch(`https://api.spotify.com/v1/playlists/${newPlaylistId}/tracks`, {
         method: 'POST',
